@@ -1,8 +1,30 @@
-import { Box, Button } from '@material-ui/core';
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
+import ApiClient from '../network/ApiClient';
+import { Box, Button } from '@material-ui/core';
 import ButtonWithBackgroundColor from '../components/ButtonWithBackgroundColor';
-import useIsAfterSsr from '../utils/customHook/useIsAfterSsr';
+
+const Home: React.FC = () => {
+  useEffect(() => {
+    (async () => {
+      const result = await ApiClient.getRequest('');
+      console.log(result);
+    })();
+  });
+
+  return (
+    <>
+      <Box>
+        <Button color="primary" variant="contained">
+          プライマリー
+        </Button>
+        <StyledButton variant="contained">みどり</StyledButton>
+        <ButtonWithBackgroundColor backgroundColor="yellow">きいろ</ButtonWithBackgroundColor>
+        <RedText>あか</RedText>
+      </Box>
+    </>
+  );
+};
 
 const RedText = styled.span`
   font-size: 50px;
@@ -12,23 +34,5 @@ const RedText = styled.span`
 const StyledButton = styled(Button)`
   background-color: green;
 `;
-
-const Home: React.FC = () => {
-  const isAfterSsr = useIsAfterSsr();
-  return (
-    <>
-      {isAfterSsr && (
-        <Box>
-          <Button color="primary" variant="contained">
-            プライマリー
-          </Button>
-          <StyledButton variant="contained">みどり</StyledButton>
-          <ButtonWithBackgroundColor backgroundColor="yellow">きいろ</ButtonWithBackgroundColor>
-          <RedText>あか</RedText>
-        </Box>
-      )}
-    </>
-  );
-};
 
 export default Home;
