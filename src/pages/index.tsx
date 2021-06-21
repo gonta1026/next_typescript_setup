@@ -15,14 +15,11 @@ const Home: React.FC = () => {
       <BaseButton color="primary" variant="contained" onClick={() => console.log('click')}>
         ボタンです
       </BaseButton>
-      <BaseButton
-        className="mt-10"
-        color="secondary"
-        variant="contained"
-        onClick={() => console.log('click')}
-      >
-        secondary
-      </BaseButton>
+      <div className="mt-10">
+        <BaseButton color="secondary" variant="contained" onClick={() => console.log('click')}>
+          secondary
+        </BaseButton>
+      </div>
     </>
   );
 };
