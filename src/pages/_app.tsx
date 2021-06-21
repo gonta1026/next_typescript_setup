@@ -4,7 +4,8 @@ import { MuiThemeProvider, StylesProvider } from '@material-ui/core/styles';
 import { AppProps } from 'next/app';
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import theme from '../styles/theme';
+import theme from '../styles/js/theme';
+import '../styles/css/utility.scss';
 
 function MyApp({ Component, pageProps }: AppProps) {
   React.useEffect(() => {

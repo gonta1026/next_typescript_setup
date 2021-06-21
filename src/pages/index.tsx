@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
-import styled from 'styled-components';
 import ApiClient from '../network/ApiClient';
-import { Box, Button } from '@material-ui/core';
-import ButtonWithBackgroundColor from '../components/ButtonWithBackgroundColor';
+import { BaseButton } from '../components/UiKit';
 
 const Home: React.FC = () => {
   useEffect(() => {
@@ -14,25 +12,19 @@ const Home: React.FC = () => {
 
   return (
     <>
-      <Box>
-        <Button color="primary" variant="contained">
-          プライマリー
-        </Button>
-        <StyledButton variant="contained">みどり</StyledButton>
-        <ButtonWithBackgroundColor backgroundColor="yellow">きいろ</ButtonWithBackgroundColor>
-        <RedText>あか</RedText>
-      </Box>
+      <BaseButton color="primary" variant="contained" onClick={() => console.log('click')}>
+        ボタンです
+      </BaseButton>
+      <BaseButton
+        className="mt-10"
+        color="secondary"
+        variant="contained"
+        onClick={() => console.log('click')}
+      >
+        secondary
+      </BaseButton>
     </>
   );
 };
-
-const RedText = styled.span`
-  font-size: 50px;
-  color: red;
-`;
-
-const StyledButton = styled(Button)`
-  background-color: green;
-`;
 
 export default Home;
