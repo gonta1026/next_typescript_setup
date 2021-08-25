@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 import { mediaSize } from '../../const/media';
 
-const BasePageTitle = ({ children }: { children: ReactNode }) => {
+const BasePageTitle = ({ children }: { children: ReactNode }): JSX.Element => {
   return <Heading>{children}</Heading>;
 };
 

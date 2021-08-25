@@ -20,9 +20,9 @@ const BaseButton = ({
   variant: 'contained' | 'outlined' | 'text';
   size?: 'large' | 'medium' | 'small';
   startIcon?: 'AddCircleOutline' | '';
-}) => {
-  const switchIcon = (Icon: string) => {
-    switch (startIcon) {
+}): JSX.Element => {
+  const switchIcon = (icon: 'AddCircleOutline' | '') => {
+    switch (icon) {
       case 'AddCircleOutline':
         <AddCircleOutline />;
         break;
